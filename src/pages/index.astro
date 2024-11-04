@@ -30,15 +30,24 @@ const { name, label } = basics;
       <Education className="order-first" />
     </div>
     <Tail />
-		<script>
-			const mensaje = "Espero que te guste el portfolio. Aprendí mucho haciendolo, el tuyo y el de Jonathan quedaron mucho mejor que el mio y mucho mejor estructurados. Te prometí que te apoyaría en el camino que decidas ir y no pienso retroceder a mi palabra, espero que esto ayude. Me gustaria poder contarte todo lo que estoy aprendiendo y haciendo, no te voy a mentir, te extraño mucho. Espero que te encuentres mejor, cuidate mucho por favor. Sabes que siempre podrás contar conmigo. Tus locuras van con mis locuras"
+    <script>
+      export {}; // Esto asegura que TypeScript trate el archivo como un módulo
 
-			const printMensaje = () =>{
-				console.log(mensaje)
-			}
+      declare global {
+        interface Window {
+          imprimirMensaje: () => void; // Ajusta el tipo según la función `imprimirMensaje`
+        }
+      }
 
-			window.imprimirMensaje = printMensaje;
-		</script>
+      const mensaje =
+        "Espero que te guste el portfolio. Aprendí mucho haciendolo, el tuyo y el de Jonathan quedaron mucho mejor que el mio y mucho mejor estructurados. Te prometí que te apoyaría en el camino que decidas ir y no pienso retroceder a mi palabra, espero que esto ayude. Me gustaria poder contarte todo lo que estoy aprendiendo y haciendo, no te voy a mentir, te extraño mucho. Espero que te encuentres mejor, cuidate mucho por favor. Sabes que siempre podrás contar conmigo. Tus locuras van con mis locuras";
+
+      const printMensaje = () => {
+        console.log(mensaje);
+      };
+
+      window.imprimirMensaje = printMensaje;
+    </script>
   </main>
 </Layout>
 
